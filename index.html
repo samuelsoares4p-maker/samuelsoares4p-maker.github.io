@@ -6,33 +6,112 @@
 <title>DEV Esieme - Criação de Sites</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #111, #222); color: #fff; }
-    header { text-align: center; padding: 50px 20px; }
-    header h1 { font-size: 48px; margin: 0; color: #00ffff; text-shadow: 0 0 10px #00ffff; }
-    header p { font-size: 20px; margin-top: 10px; color: #ccc; }
 
-    section { padding: 60px 20px; text-align: center; }
-    section h2 { font-size: 36px; margin-bottom: 30px; color: #ff6f61; }
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        background: url('https://images.unsplash.com/photo-1612831455543-1dcb8ec3d70f?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+    }
+
+    /* Overlay transparente */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(0,0,0,0.85);
+        z-index: -1;
+    }
+
+    header {
+        text-align: center;
+        padding: 60px 20px;
+    }
+    header h1 {
+        font-size: 48px;
+        margin: 0;
+        color: #00bfff;
+        text-shadow: 0 0 15px #00bfff;
+    }
+    header p {
+        font-size: 20px;
+        margin-top: 10px;
+        color: #ccc;
+    }
+
+    section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+    section h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #00bfff;
+    }
 
     .buttons a { text-decoration: none; margin: 10px; }
-    .buttons button { padding: 18px 30px; font-size: 20px; border: none; border-radius: 10px; cursor: pointer; transition: 0.3s; font-weight: 600; }
-    .buttons button:hover { transform: scale(1.05); }
-    .whatsapp { background: #25D366; color: #fff; box-shadow: 0 0 15px #25D366; }
-    .instagram { background: #C13584; color: #fff; box-shadow: 0 0 15px #C13584; }
+    .buttons button {
+        padding: 18px 30px;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: 600;
+        color: #fff;
+        background-color: #001f3f;
+        box-shadow: 0 0 15px #00bfff;
+    }
+    .buttons button:hover { transform: scale(1.05); box-shadow: 0 0 25px #00bfff; }
 
-    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
-    .service { background: #1a1a1a; padding: 25px; border-radius: 15px; width: 280px; box-shadow: 0 0 20px rgba(0,255,255,0.2); transition: 0.3s; }
-    .service:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
-    .service h3 { margin-top: 0; color: #00ffff; }
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+    }
+    .service {
+        background: rgba(0,0,0,0.7);
+        padding: 25px;
+        border-radius: 15px;
+        width: 280px;
+        box-shadow: 0 0 20px rgba(0,191,255,0.2);
+        transition: 0.3s;
+    }
+    .service:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,191,255,0.4); }
+    .service h3 { margin-top: 0; color: #00bfff; }
     .service p { margin: 10px 0 0 0; color: #ccc; }
 
-    .reviews { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .review { background: #1a1a1a; padding: 20px; border-radius: 15px; width: 300px; box-shadow: 0 0 20px rgba(255,111,97,0.2); transition: 0.3s; }
-    .review:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(255,111,97,0.4); }
+    .reviews {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .review {
+        background: rgba(0,0,0,0.7);
+        padding: 20px;
+        border-radius: 15px;
+        width: 300px;
+        box-shadow: 0 0 20px rgba(0,191,255,0.2);
+        transition: 0.3s;
+    }
+    .review:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,191,255,0.4); }
     .review p { margin: 5px 0; color: #ccc; }
-    .review strong { color: #ff6f61; }
+    .review strong { color: #00bfff; }
 
-    footer { background-color: #111; color: #ccc; padding: 25px; text-align: center; font-size: 14px; margin-top: 40px; }
+    footer {
+        background-color: #111;
+        color: #ccc;
+        padding: 25px;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 40px;
+    }
 </style>
 </head>
 <body>
@@ -46,10 +125,10 @@
     <h2>Entre em contato</h2>
     <div class="buttons">
         <a href="https://wa.me/5519996511725" target="_blank">
-            <button class="whatsapp">Fale no WhatsApp</button>
+            <button>Fale no WhatsApp</button>
         </a>
         <a href="https://instagram.com/_esieme" target="_blank">
-            <button class="instagram">Visite o Instagram</button>
+            <button>Visite o Instagram</button>
         </a>
     </div>
 </section>
@@ -76,13 +155,13 @@
     <h2>Avaliações</h2>
     <div class="reviews">
         <div class="review">
-            <p><strong>João P.</strong> – Excelente trabalho! Meu site ficou incrível.</p>
+            <p><strong>Clientes satisfeitos</strong> – Mais de 20 sites criados para pequenos negócios.</p>
         </div>
         <div class="review">
-            <p><strong>Maria S.</strong> – Super profissional e rápido. Recomendo!</p>
+            <p><strong>Negócios locais</strong> – Sites otimizados para WhatsApp e Instagram.</p>
         </div>
         <div class="review">
-            <p><strong>Carlos L.</strong> – Agora minha barbearia aparece no Google e clientes chegam pelo site.</p>
+            <p><strong>Profissionalismo</strong> – Entrega rápida e suporte contínuo.</p>
         </div>
     </div>
 </section>
