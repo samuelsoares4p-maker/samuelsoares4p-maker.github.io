@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEV Esieme - Criação de Sites</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0; }
-        header { background-color: #111; color: #fff; padding: 30px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 36px; }
-        header p { font-size: 18px; margin-top: 5px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV Esieme - Criação de Sites</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #111, #222); color: #fff; }
+    header { text-align: center; padding: 50px 20px; }
+    header h1 { font-size: 48px; margin: 0; color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+    header p { font-size: 20px; margin-top: 10px; color: #ccc; }
 
-        section { padding: 40px 20px; text-align: center; }
-        section h2 { font-size: 28px; margin-bottom: 20px; }
+    section { padding: 60px 20px; text-align: center; }
+    section h2 { font-size: 36px; margin-bottom: 30px; color: #ff6f61; }
 
-        .buttons a { text-decoration: none; margin: 10px; }
-        .buttons button { padding: 15px 25px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; }
-        .buttons button:hover { opacity: 0.8; }
+    .buttons a { text-decoration: none; margin: 10px; }
+    .buttons button { padding: 18px 30px; font-size: 20px; border: none; border-radius: 10px; cursor: pointer; transition: 0.3s; font-weight: 600; }
+    .buttons button:hover { transform: scale(1.05); }
+    .whatsapp { background: #25D366; color: #fff; box-shadow: 0 0 15px #25D366; }
+    .instagram { background: #C13584; color: #fff; box-shadow: 0 0 15px #C13584; }
 
-        .whatsapp { background-color: #25D366; color: #fff; }
-        .instagram { background-color: #C13584; color: #fff; }
+    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
+    .service { background: #1a1a1a; padding: 25px; border-radius: 15px; width: 280px; box-shadow: 0 0 20px rgba(0,255,255,0.2); transition: 0.3s; }
+    .service:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
+    .service h3 { margin-top: 0; color: #00ffff; }
+    .service p { margin: 10px 0 0 0; color: #ccc; }
 
-        .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
-        .service { background-color: #fff; padding: 20px; border-radius: 10px; width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .service h3 { margin-top: 0; }
-        .service p { margin: 10px 0 0 0; }
+    .reviews { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .review { background: #1a1a1a; padding: 20px; border-radius: 15px; width: 300px; box-shadow: 0 0 20px rgba(255,111,97,0.2); transition: 0.3s; }
+    .review:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(255,111,97,0.4); }
+    .review p { margin: 5px 0; color: #ccc; }
+    .review strong { color: #ff6f61; }
 
-        .reviews { margin-top: 30px; }
-        .review { background-color: #fff; padding: 15px; border-radius: 10px; margin: 10px auto; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .review p { margin: 5px 0; }
-        .review strong { color: #111; }
-
-        footer { background-color: #111; color: #fff; padding: 20px; text-align: center; margin-top: 40px; }
-    </style>
+    footer { background-color: #111; color: #ccc; padding: 25px; text-align: center; font-size: 14px; margin-top: 40px; }
+</style>
 </head>
 <body>
 
