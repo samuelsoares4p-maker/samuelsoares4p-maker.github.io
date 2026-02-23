@@ -79,6 +79,9 @@
     .review p { margin: 5px 0; color: #ccc; }
     .review strong { color: #00bfff; }
 
+    #avaliar input { padding:10px; border-radius:5px; border:none; margin:5px; }
+    #avaliar button { margin-top:5px; }
+
     footer { background-color: #111; color: #ccc; padding: 25px; text-align: center; font-size: 14px; margin-top: 40px; }
 
     @media(max-width: 768px) { .services, .reviews, .about { flex-direction: column; align-items: center; } .about p { text-align: center; } header h1 { font-size: 28px; } section h2 { font-size: 28px; } }
@@ -113,12 +116,12 @@
 <!-- Seção 3: Depoimentos -->
 <section id="depoimentos">
     <h2>Depoimentos</h2>
-    <div class="reviews">
-        <div class="review"><p><strong>João M.</strong> – "Amei meu site ficou incrível, meus clientes adoraram e tudo funciona perfeito."</p></div>
-        <div class="review"><p><strong>Maria S.</strong> – "O site ficou bonito, mas achei que demorou um pouco para ficar pronto, mas valeu a espera"</p></div>
+    <div class="reviews" id="listaAvaliacoes">
+        <div class="review"><p><strong>João M.</strong> – "Amei meu site! Ficou incrível, meus clientes adoraram e tudo funciona perfeito."</p></div>
+        <div class="review"><p><strong>Maria S.</strong> – "O site ficou bonito, mas achei que demorou um pouco para ficar pronto, mas valeu a espera!"</p></div>
         <div class="review"><p><strong>Lucas R.</strong> – "Profissionalismo total! Sites modernos e atendimento excelente."</p></div>
-        <div class="review"><p><strong>Ana P.</strong> – "Simplesmente perfeito o ultimo que paguei nao fez o neon que nem voces."</p></div>
-        <div class="review"><p><strong>Rafael T.</strong> – "O site ficou otimo, gostei do design e da facilidade de navegar."</p></div>
+        <div class="review"><p><strong>Ana P.</strong> – "Simplesmente perfeito! Meu negócio já ganhou mais clientes."</p></div>
+        <div class="review"><p><strong>Rafael T.</strong> – "O site ficou ótimo, gostei do design e da facilidade de navegar."</p></div>
     </div>
 </section>
 
@@ -126,7 +129,6 @@
 <section id="bio">
     <h2>Biografia</h2>
     <div class="about">
-        <img src="foto.jpg" alt="DEV esieme">
         <p>Olá, sou <strong>DEV - esieme</strong>, especialista em criação de sites para negócios locais há 5 anos. Transformo sua presença online com sites modernos, responsivos e otimizados para atrair clientes.</p>
     </div>
 </section>
@@ -139,19 +141,50 @@
     </div>
 </section>
 
-<!-- Seção 6: Botão Final de Avaliação -->
+<!-- Seção 6: Avaliação funcional -->
 <section id="avaliar">
     <h2>Avalie meu trabalho</h2>
-    <div class="buttons">
-        <a href="https://wa.me/559996511725?text=Quero%20avaliar%20o%20seu%20trabalho" target="_blank">
-            <button>Enviar Avaliação</button>
-        </a>
+    <div>
+        <input type="text" id="nome" placeholder="Seu nome">
+        <input type="text" id="comentario" placeholder="Sua avaliação">
+        <button onclick="adicionarAvaliacao()">Enviar</button>
     </div>
 </section>
 
 <footer>
     © 2026 DEV esieme | Criação de sites profissionais
 </footer>
+
+<script>
+const lista = document.getElementById('listaAvaliacoes');
+
+// Carrega avaliações do localStorage
+if(localStorage.getItem('avaliacoes')){
+    lista.innerHTML += localStorage.getItem('avaliacoes');
+}
+
+function adicionarAvaliacao() {
+    const nome = document.getElementById('nome').value.trim();
+    const comentario = document.getElementById('comentario').value.trim();
+
+    if(!nome || !comentario){
+        alert("Preencha ambos os campos.");
+        return;
+    }
+
+    const div = document.createElement('div');
+    div.className = 'review';
+    div.innerHTML = `<p><strong>${nome}</strong> – "${comentario}"</p>`;
+    
+    lista.insertBefore(div, lista.firstChild);
+
+    // Salva no localStorage
+    localStorage.setItem('avaliacoes', lista.innerHTML);
+
+    document.getElementById('nome').value = "";
+    document.getElementById('comentario').value = "";
+}
+</script>
 
 </body>
 </html>
