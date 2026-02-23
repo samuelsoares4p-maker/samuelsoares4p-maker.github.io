@@ -16,8 +16,6 @@
         background-size: cover;
         position: relative;
     }
-
-    /* Overlay transparente para destacar texto */
     body::before {
         content: "";
         position: fixed;
@@ -26,50 +24,29 @@
         z-index: -1;
     }
 
-    /* Header fixo no topo */
     header {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         background: rgba(0,0,0,0.95);
         padding: 20px 20px;
         text-align: center;
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0,191,255,0.3);
     }
-    header h1 {
-        margin: 0;
-        font-size: 36px;
-        color: #00bfff;
-        text-shadow: 0 0 10px #00bfff;
-    }
+    header h1 { margin: 0; font-size: 36px; color: #00bfff; text-shadow: 0 0 10px #00bfff; }
     header p { margin: 5px 0 0; color: #ccc; }
 
-    /* Seções */
-    section {
-        padding: 100px 20px 60px;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 1s forwards;
-    }
+    section { padding: 120px 20px 60px; text-align: center; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
     section:nth-of-type(1) { animation-delay: 0.2s; }
     section:nth-of-type(2) { animation-delay: 0.4s; }
     section:nth-of-type(3) { animation-delay: 0.6s; }
     section:nth-of-type(4) { animation-delay: 0.8s; }
+    section:nth-of-type(5) { animation-delay: 1s; }
 
-    @keyframes fadeInUp {
-        to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    section h2 {
-        font-size: 36px;
-        margin-bottom: 30px;
-        color: #00bfff;
-    }
+    section h2 { font-size: 36px; margin-bottom: 30px; color: #00bfff; }
 
-    /* Botões */
     .buttons a { text-decoration: none; margin: 10px; }
     .buttons button {
         padding: 18px 30px;
@@ -85,14 +62,21 @@
     }
     .buttons button:hover { transform: scale(1.05); box-shadow: 0 0 25px #00bfff; }
 
-    /* Serviços */
-    .services {
+    .about {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         gap: 25px;
-        margin-top: 30px;
     }
+    .about img {
+        border-radius: 15px;
+        width: 250px;
+        box-shadow: 0 0 20px rgba(0,191,255,0.4);
+    }
+    .about p { max-width: 500px; text-align: left; color: #ccc; font-size: 18px; }
+
+    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
     .service {
         background: rgba(0,0,0,0.7);
         padding: 25px;
@@ -105,14 +89,7 @@
     .service h3 { margin-top: 0; color: #00bfff; }
     .service p { margin: 10px 0 0 0; color: #ccc; }
 
-    /* Avaliações */
-    .reviews {
-        margin-top: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
+    .reviews { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .review {
         background: rgba(0,0,0,0.7);
         padding: 20px;
@@ -125,19 +102,11 @@
     .review p { margin: 5px 0; color: #ccc; }
     .review strong { color: #00bfff; }
 
-    /* Footer */
-    footer {
-        background-color: #111;
-        color: #ccc;
-        padding: 25px;
-        text-align: center;
-        font-size: 14px;
-        margin-top: 40px;
-    }
+    footer { background-color: #111; color: #ccc; padding: 25px; text-align: center; font-size: 14px; margin-top: 40px; }
 
-    /* Responsivo */
     @media(max-width: 768px) {
-        .services, .reviews { flex-direction: column; align-items: center; }
+        .services, .reviews, .about { flex-direction: column; align-items: center; }
+        .about p { text-align: center; }
         header h1 { font-size: 28px; }
         section h2 { font-size: 28px; }
     }
@@ -150,38 +119,41 @@
     <p>Criação de sites profissionais para negócios locais</p>
 </header>
 
-<section>
-    <h2>Entre em contato</h2>
-    <div class="buttons">
-        <a href="https://wa.me/5519996511725" target="_blank">
-            <button>Fale no WhatsApp</button>
-        </a>
-        <a href="https://instagram.com/_esieme" target="_blank">
-            <button>Visite o Instagram</button>
-        </a>
+<section id="home">
+    <h2>Bem-vindo</h2>
+    <div class="about">
+        <img src="https://img.freepik.com/fotos-premium/retrato-em-preto-e-branco-de-uma-mulher-com-expressao-intensa_1150025-51981.jpg" alt="DEV Esieme">
+        <p>Olá, sou <strong>DEV - esieme</strong>, especialista em criação de sites para negócios locais há 5 anos. Meu objetivo é transformar sua presença online com sites modernos, responsivos e otimizados para atrair clientes.</p>
     </div>
 </section>
 
-<section>
+<section id="sobre">
+    <h2>Sobre Mim</h2>
+    <div class="about">
+        <p>Atuando no mercado de desenvolvimento web desde 2018, já criei mais de 50 sites para barbearias, padarias, restaurantes e pequenos negócios. Meu foco é qualidade, rapidez e soluções que funcionam para cada cliente.</p>
+    </div>
+</section>
+
+<section id="servicos">
     <h2>Serviços e Preços</h2>
     <div class="services">
         <div class="service">
             <h3>Site Simples</h3>
-            <p>R$80 - Página única com informações e botões</p>
+            <p>R$80 - Página única com informações, fotos e botões de contato.</p>
         </div>
         <div class="service">
             <h3>Site Profissional</h3>
-            <p>R$150 - Nome próprio, fotos e atualização</p>
+            <p>R$150 - Nome próprio, fotos, seções adicionais e otimização.</p>
         </div>
         <div class="service">
             <h3>Manutenção</h3>
-            <p>R$15/mês - Atualização de fotos, preços e suporte</p>
+            <p>R$15/mês - Atualizações de fotos, preços, suporte contínuo.</p>
         </div>
     </div>
 </section>
 
-<section>
-    <h2>Avaliações</h2>
+<section id="depoimentos">
+    <h2>Depoimentos</h2>
     <div class="reviews">
         <div class="review">
             <p><strong>Clientes satisfeitos</strong> – Sites otimizados para WhatsApp e Instagram.</p>
@@ -192,6 +164,14 @@
         <div class="review">
             <p><strong>Negócios locais</strong> – Sites que ajudam a atrair mais clientes.</p>
         </div>
+    </div>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <div class="buttons">
+        <a href="https://wa.me/5519996511725" target="_blank"><button>Fale no WhatsApp</button></a>
+        <a href="https://instagram.com/_esieme" target="_blank"><button>Visite o Instagram</button></a>
     </div>
 </section>
 
