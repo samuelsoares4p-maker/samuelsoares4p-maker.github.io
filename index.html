@@ -5,154 +5,165 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DEV esieme - Criação de Sites</title>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-    html { scroll-behavior: smooth; }
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        color: #fff;
-        background: url('https://img.freepik.com/fotos-premium/retrato-em-preto-e-branco-de-uma-mulher-com-expressao-intensa_1150025-51981.jpg') no-repeat center center fixed;
-        background-size: cover;
-        position: relative;
-    }
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-color: rgba(0,0,0,0.85);
-        z-index: -1;
-    }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: url('https://img.freepik.com/fotos-premium/retrato-em-preto-e-branco-de-uma-mulher-com-expressao-intensa_1150025-51981.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.85);
+    z-index: -1;
+}
 
-    header {
-        position: fixed;
-        top: 0; left: 0; right: 0;
-        background: rgba(0,0,0,0.95);
-        padding: 20px;
-        text-align: center;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,191,255,0.3);
-    }
-    header h1 { margin: 0; font-size: 36px; color: #00bfff; text-shadow: 0 0 10px #00bfff; }
-    header p { margin: 5px 0 0; color: #ccc; }
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.95);
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,191,255,0.3);
+}
+header h1 { margin: 0; font-size: 36px; color: #00bfff; text-shadow: 0 0 10px #00bfff; }
+header p { margin: 5px 0 0; color: #ccc; }
 
-    section { padding: 120px 20px 60px; text-align: center; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
-    section:nth-of-type(1) { animation-delay: 0.2s; }
-    section:nth-of-type(2) { animation-delay: 0.4s; }
-    section:nth-of-type(3) { animation-delay: 0.6s; }
-    section:nth-of-type(4) { animation-delay: 0.8s; }
-    section:nth-of-type(5) { animation-delay: 1s; }
-    section:nth-of-type(6) { animation-delay: 1.2s; }
+section { padding: 120px 20px 60px; text-align: center; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(4) { animation-delay: 0.8s; }
+section:nth-of-type(5) { animation-delay: 1s; }
+section:nth-of-type(6) { animation-delay: 1.2s; }
 
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    section h2 { font-size: 36px; margin-bottom: 30px; color: #00bfff; }
+section h2 { font-size: 36px; margin-bottom: 30px; color: #00bfff; }
 
-    .buttons a { text-decoration: none; margin: 10px; }
-    .buttons button {
-        padding: 18px 30px;
-        font-size: 20px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.3s;
-        font-weight: 600;
-        color: #fff;
-        background-color: #001f3f;
-        box-shadow: 0 0 15px #00bfff;
-    }
-    .buttons button:hover { transform: scale(1.05); box-shadow: 0 0 25px #00bfff; }
+.buttons a { text-decoration: none; margin: 10px; }
+.buttons button {
+    padding: 18px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+    color: #fff;
+    background-color: #001f3f;
+    box-shadow: 0 0 15px #00bfff;
+}
+.buttons button:hover { transform: scale(1.05); box-shadow: 0 0 25px #00bfff; }
 
-    .about { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 25px; }
-    .about img { border-radius: 15px; width: 250px; box-shadow: 0 0 20px rgba(0,191,255,0.4); }
-    .about p { max-width: 500px; text-align: left; color: #ccc; font-size: 18px; }
+.about { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 25px; }
+.about p { max-width: 500px; text-align: left; color: #ccc; font-size: 18px; }
 
-    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
-    .service { background: rgba(0,0,0,0.7); padding: 25px; border-radius: 15px; width: 280px; box-shadow: 0 0 20px rgba(0,191,255,0.2); transition: 0.3s; }
-    .service:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,191,255,0.4); }
-    .service h3 { margin-top: 0; color: #00bfff; }
-    .service p { margin: 10px 0 0 0; color: #ccc; }
+.services { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
+.service { background: rgba(0,0,0,0.7); padding: 25px; border-radius: 15px; width: 280px; box-shadow: 0 0 20px rgba(0,191,255,0.2); transition: 0.3s; }
+.service:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,191,255,0.4); }
+.service h3 { margin-top: 0; color: #00bfff; }
+.service p { margin: 10px 0 0 0; color: #ccc; }
 
-    .reviews { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .review { background: rgba(0,0,0,0.7); padding: 20px; border-radius: 15px; width: 300px; box-shadow: 0 0 20px rgba(0,191,255,0.2); transition: 0.3s; }
-    .review:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,191,255,0.4); }
-    .review p { margin: 5px 0; color: #ccc; }
-    .review strong { color: #00bfff; }
+.reviews { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.review { background: rgba(0,0,0,0.7); padding: 20px; border-radius: 15px; width: 300px; box-shadow: 0 0 20px rgba(0,191,255,0.2); transition: 0.3s; }
+.review:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,191,255,0.4); }
+.review p { margin: 5px 0; color: #ccc; }
+.review strong { color: #00bfff; }
+.review img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
 
-    #avaliar input { padding:10px; border-radius:5px; border:none; margin:5px; }
-    #avaliar button { margin-top:5px; }
+#avaliar input { padding:10px; border-radius:5px; border:none; margin:5px; }
+#avaliar button { margin-top:5px; }
 
-    footer { background-color: #111; color: #ccc; padding: 25px; text-align: center; font-size: 14px; margin-top: 40px; }
+footer { background-color: #111; color: #ccc; padding: 25px; text-align: center; font-size: 14px; margin-top: 40px; }
 
-    @media(max-width: 768px) { .services, .reviews, .about { flex-direction: column; align-items: center; } .about p { text-align: center; } header h1 { font-size: 28px; } section h2 { font-size: 28px; } }
+@media(max-width: 768px) { .services, .reviews, .about { flex-direction: column; align-items: center; } .about p { text-align: center; } header h1 { font-size: 28px; } section h2 { font-size: 28px; } }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>DEV - esieme</h1>
-    <p>Criação de sites profissionais para negócios locais</p>
+<h1>DEV - esieme</h1>
+<p>Criação de sites profissionais para negócios locais</p>
 </header>
 
 <!-- Seção 1: Serviços -->
 <section id="servicos">
-    <h2>Serviços e Preços</h2>
-    <div class="services">
-        <div class="service"><h3>Site Simples</h3><p>R$80 - Página única com informações, fotos e botões de contato.</p></div>
-        <div class="service"><h3>Site Profissional</h3><p>R$150 - Nome próprio, fotos, seções adicionais e otimização completa.</p></div>
-        <div class="service"><h3>Manutenção</h3><p>R$15/mês - Atualizações de fotos, preços e suporte contínuo.</p></div>
-    </div>
+<h2>Serviços e Preços</h2>
+<div class="services">
+<div class="service"><h3>Site Simples</h3><p>R$80 - Página única com informações, fotos e botões de contato.</p></div>
+<div class="service"><h3>Site Profissional</h3><p>R$150 - Nome próprio, fotos, seções adicionais e otimização completa.</p></div>
+<div class="service"><h3>Manutenção</h3><p>R$15/mês - Atualizações de fotos, preços e suporte contínuo.</p></div>
+</div>
 </section>
 
 <!-- Seção 2: Contato -->
 <section id="contato">
-    <h2>Contato</h2>
-    <div class="buttons">
-        <a href="https://wa.me/5519996511725" target="_blank"><button>Fale no WhatsApp</button></a>
-        <a href="https://instagram.com/_esieme" target="_blank"><button>Visite o Instagram</button></a>
-    </div>
+<h2>Contato</h2>
+<div class="buttons">
+<a href="https://wa.me/5519996511725" target="_blank"><button>Fale no WhatsApp</button></a>
+<a href="https://instagram.com/_esieme" target="_blank"><button>Visite o Instagram</button></a>
+</div>
 </section>
 
-<!-- Seção 3: Depoimentos -->
+<!-- Seção 3: Depoimentos com imagens -->
 <section id="depoimentos">
-    <h2>Depoimentos</h2>
-    <div class="reviews" id="listaAvaliacoes">
-        <div class="review"><p><strong>João M.</strong> – "Amei meu site! Ficou incrível, meus clientes adoraram e tudo funciona perfeito."</p></div>
-        <div class="review"><p><strong>Maria S.</strong> – "O site ficou bonito, mas achei que demorou um pouco para ficar pronto, mas valeu a espera!"</p></div>
-        <div class="review"><p><strong>Lucas R.</strong> – "Profissionalismo total! Sites modernos e atendimento excelente."</p></div>
-        <div class="review"><p><strong>Ana P.</strong> – "Simplesmente perfeito! Meu negócio já ganhou mais clientes."</p></div>
-        <div class="review"><p><strong>Rafael T.</strong> – "O site ficou ótimo, gostei do design e da facilidade de navegar."</p></div>
+<h2>Depoimentos</h2>
+<div class="reviews" id="listaAvaliacoes">
+    <div class="review"><p><strong>João guilherme</strong> – "Amei meu site! Ficou incrível, meus clientes adoraram e tudo funciona perfeito."</p></div>
+    <div class="review"><p><strong>Maria fernanda</strong> – "O site ficou bonito, mas achei que demorou um pouco para ficar pronto, mas valeu a espera!"</p></div>
+    <div class="review"><p><strong>Lucas leal</strong> – "Profissionalismo total! Sites modernos e atendimento excelente."</p></div>
+
+    <div class="review">
+        <img src="https://freeimage.host/i/qKAaVlS" alt="Template 1">
+        <p><strong>Carla F.</strong> – "O template ficou incrível, meus clientes adoraram a navegação e o design moderno!"</p>
     </div>
+    <div class="review">
+        <img src="https://freeimage.host/i/qKAcrB4" alt="Template 2">
+        <p><strong>Marcelo T.</strong> – "Simplesmente perfeito! A identidade visual do meu negócio agora está top."</p>
+    </div>
+    <div class="review">
+        <img src="https://freeimage.host/i/qKA0nDu" alt="Template 3">
+        <p><strong>Renata S.</strong> – "Ficou lindo e funcional! Recebi elogios de todos os clientes."</p>
+    </div>
+</div>
 </section>
 
 <!-- Seção 4: Bio -->
 <section id="bio">
-    <h2>Biografia</h2>
-    <div class="about">
-        <p>Olá, sou <strong>DEV - esieme</strong>, especialista em criação de sites para negócios locais há 5 anos. Transformo sua presença online com sites modernos, responsivos e otimizados para atrair clientes.</p>
-    </div>
+<h2>Biografia</h2>
+<div class="about">
+<p>Olá, sou <strong>DEV - esieme</strong>, especialista em criação de sites para negócios locais há 5 anos. Transformo sua presença online com sites modernos, responsivos e otimizados para atrair clientes.</p>
+</div>
 </section>
 
 <!-- Seção 5: Sobre Mim -->
 <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <div class="about">
-        <p>Atuo no mercado de desenvolvimento web desde 2018, já criei mais de 50 sites para barbearias, padarias, restaurantes e pequenos negócios. Meu foco é qualidade, rapidez e soluções personalizadas. Adoro ver meus clientes satisfeitos e o crescimento dos negócios deles.</p>
-    </div>
+<h2>Sobre Mim</h2>
+<div class="about">
+<p>Atuo no mercado de desenvolvimento web desde 2018, já criei mais de 50 sites para barbearias, padarias, restaurantes e pequenos negócios. Meu foco é qualidade, rapidez e soluções personalizadas. Adoro ver meus clientes satisfeitos e o crescimento dos negócios deles.</p>
+</div>
 </section>
 
 <!-- Seção 6: Avaliação funcional -->
 <section id="avaliar">
-    <h2>Avalie meu trabalho</h2>
-    <div>
-        <input type="text" id="nome" placeholder="Seu nome">
-        <input type="text" id="comentario" placeholder="Sua avaliação">
-        <button onclick="adicionarAvaliacao()">Enviar</button>
-    </div>
+<h2>Avalie meu trabalho</h2>
+<div>
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="text" id="comentario" placeholder="Sua avaliação">
+<button onclick="adicionarAvaliacao()">Enviar</button>
+</div>
 </section>
 
 <footer>
-    © 2026 DEV esieme | Criação de sites profissionais
+© 2026 DEV esieme | Criação de sites profissionais
 </footer>
 
 <script>
